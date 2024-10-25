@@ -13,8 +13,8 @@
     "test": "vitest",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "format:check": "npx prettier . --check --ignore-path .gitignore .vscode",
-    "format:fix": "npx prettier . --check --ignore-path .gitignore .vscode"
+    "format:check": "npx prettier . --check --ignore-path .gitignore .vscode/*",
+    "format:fix": "npx prettier . --check --ignore-path .gitignore .vscode/*"
   },
   "keywords": [
     "react",

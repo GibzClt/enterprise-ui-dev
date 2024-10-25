@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { render, screen } from 'test/utilities';
 import PackingList from '.';
 

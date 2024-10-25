@@ -1,0 +1,31 @@
+name: Run unit tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout repo'
+        uses: actions/checkout@v3
+      - name: Setup node
+        uses: actions/setup-node@v3
+      - uses: actions/cache@v3
+        id: npm-cache
+        with:
+          path: ~/.npm
+          key: npm-${{ hashfiles('**/package-lock.json')}}
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Checkout repo'
+        uses: actions/checkout@v3
+      - name: 'Run Prettier'
+        run: npm run format:check

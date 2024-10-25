@@ -1,3 +1,4 @@
+//@ts-nocheck
 import ObstacleCourse from '.';
 
 it.todo('should input text into the input field', () => {

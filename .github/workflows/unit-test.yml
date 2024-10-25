@@ -22,3 +22,8 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm test
+  prettier:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Run Prettier'
+        run: npm run format:check
